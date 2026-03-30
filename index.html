@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Rochedix Sasha · Creative Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">Rochedix Sasha · Portfolio</div>
+      <div class="nav-links">
+        <a href="#skills">Stack</a>
+        <a href="#tcg">TCG Project</a>
+        <a href="#projects">Projets</a>
+        <a href="#art">Créations</a>
+        <a href="mailto:ton@email.fr">Contact</a>
+      </div>
+    </nav>
+
+    <!-- 1. HERO -->
+    <section id="hero">
+      <div class="container hero-container">
+        <div class="hero-text">
+          <div class="label">Creative Developer</div>
+          <h1 class="hero-name">
+            Rochedix<br /><span class="accent">Sasha</span>
+          </h1>
+          <p class="hero-title">
+            Fullstack Web Developer & Designer · En recherche d'alternance
+          </p>
+          <p class="hero-bio">
+            J'aime construire des expériences web gamifiées. Passionné par la
+            narration interactive, le game design.
+          </p>
+          <div class="hero-cta">
+            <a href="#tcg" class="btn btn-primary"
+              >Voir mon projet principal: TCG ↓</a
+            >
+            <a href="/cv.pdf" class="btn btn-ghost" target="_blank">CV PDF</a>
+            <a
+              href="https://github.com/sasha4w"
+              class="btn btn-ghost"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+        <div class="hero-card-wrap">
+          <div class="hero-photo-card">
+            <div class="photo-placeholder">
+              <div class="initials">RS</div>
+              <span>[ Ta photo ici ]</span>
+            </div>
+            <div class="card-footer">
+              <div>
+                <div class="full-name">Rochedix Sasha</div>
+                <div class="role">fullstack · creative dev</div>
+              </div>
+              <div class="badge">OPEN TO WORK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <!-- 2. SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">02 · Stack &amp; Formation</div>
+        <h2 class="section-title">Compétences &amp; <span>Outils</span></h2>
+        <div class="divider"></div>
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-card-icon">⚛</div>
+            <h3>Frontend</h3>
+            <div class="tags">
+              <span class="tag hi">React / Preact</span
+              ><span class="tag hi">TypeScript</span>
+              <span class="tag">Vite</span><span class="tag">CSS Custom</span
+              ><span class="tag">SASS</span><span class="tag">Three.js</span
+              ><span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-card reveal d1">
+            <div class="skill-card-icon">⚙</div>
+            <h3>Backend</h3>
+            <div class="tags">
+              <span class="tag hi">NestJS</span
+              ><span class="tag hi">Node.js</span>
+              <span class="tag">REST API</span><span class="tag">mySQL</span
+              ><span class="tag">JWT</span> <span class="tag">Php</span
+              ><span class="tag">MVC Model</span>
+            </div>
+          </div>
+          <div class="skill-card reveal d2">
+            <div class="skill-card-icon">✦</div>
+            <h3>Design &amp; Créa</h3>
+            <div class="tags">
+              <span class="tag hi">Figma</span
+              ><span class="tag">Photoshop</span>
+              <span class="tag">Illustrator</span><span class="tag">UX/UI</span>
+            </div>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-card-icon">🔧</div>
+            <h3>Outils</h3>
+            <div class="tags">
+              <span class="tag">Git / GitHub</span
+              ><span class="tag">Netlify</span>
+              <span class="tag">React Query</span><span class="tag">Linux</span>
+            </div>
+          </div>
+          <div class="skill-card reveal d1">
+            <div class="skill-card-icon">🌐</div>
+            <h3>Langues</h3>
+            <div class="tags">
+              <span class="tag hi">Français · Natif</span>
+              <span class="tag hi">Anglais · B2</span>
+              <span class="tag">Coréen · TOPIK II</span>
+            </div>
+          </div>
+          <div class="skill-card reveal d2">
+            <div class="skill-card-icon">◈</div>
+            <h3>Soft Skills</h3>
+            <div class="tags">
+              <span class="tag">Gestion de projet · Trello</span
+              ><span class="tag">Autonomie</span><span class="tag">Dévoué</span>
+              <span class="tag">Coopératif</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="formation-title">Formation</h3>
+        <div class="diplomes reveal">
+          <div class="diplome-item">
+            <div class="diplome-year">20xx–xx</div>
+            <div class="diplome-info">
+              <h4>[Diplôme précédent]</h4>
+              <p>[Établissement]</p>
+            </div>
+          </div>
+          <div class="diplome-item">
+            <div class="diplome-year">2022–25</div>
+            <div class="diplome-info">
+              <h4>BUT MMI</h4>
+              <p>
+                Brevet Universitaire et Technologique Métiers du Multimédia et
+                de l'Internet IUT d'Angoulême · Développement Web &amp; Création
+                numérique
+              </p>
+            </div>
+          </div>
+
+          <div class="diplome-item">
+            <div class="diplome-year">20xx</div>
+            <div class="diplome-info">
+              <h4>Baccalauréat — Mention Bien</h4>
+              <p>
+                Lycée Leonard de Vinci Monistrol-sur-Loire · Spécialité SES,
+                Anglais et Arts plastiques
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TCG -->
+    <section id="tcg">
+      <div class="container">
+        <div class="tcg-header reveal">
+          <p class="tcg-eyebrow">03 · Projet principal · Case Study</p>
+          <h2 class="tcg-main-title">
+            <span class="where">Where </span><span class="art">Art</span>
+            <span class="meets"> meets </span><span class="code">Code</span>
+          </h2>
+          <p class="tcg-subtitle">
+            Un jeu de cartes à collectionner fullstack — de la conception
+            graphique jusqu'à l'API REST et l'interface de jeu et
+            d'administration.
+          </p>
+        </div>
+
+        <div class="tcg-video-zone reveal">
+          <a
+            href="https://pipoutcg.netlify.app/"
+            class="btn btn-ghost tcg-live-badge"
+            target="_blank"
+            >▶ Play Now · Live Demo</a
+          >
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+          </div>
+          <p class="video-label">[ Démo 30s de l'app en action ]</p>
+        </div>
+
+        <div class="tcg-repo-links reveal">
+          <a
+            href="https://github.com/sasha4w/tcg-frontend"
+            class="btn-code"
+            target="_blank"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            Voir le code · Frontend (React + Vite)
+          </a>
+          <a
+            href="https://github.com/sasha4w/tcg-backend"
+            class="btn-code"
+            target="_blank"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            Voir le code · Backend (NestJS)
+          </a>
+        </div>
+
+        <div class="tcg-pillars">
+          <div class="pillar art reveal">
+            <div class="pillar-icon">🎨</div>
+            <h3>La Vision Créative</h3>
+            <div class="pipeline">
+              <div class="ps">
+                <div class="em">✏️</div>
+                <div class="sn">Croquis</div>
+                <div class="sd">Concept</div>
+              </div>
+              <div class="ps">
+                <div class="em">🖊</div>
+                <div class="sn">Line-art</div>
+                <div class="sd">Numérisation</div>
+              </div>
+              <div class="ps">
+                <div class="em">🖌</div>
+                <div class="sn">Colorisation</div>
+                <div class="sd">Palette</div>
+              </div>
+              <div class="ps">
+                <div class="em">💻</div>
+                <div class="sn">Template UI</div>
+                <div class="sd">Intégration</div>
+              </div>
+            </div>
+            <ul class="pillar-list">
+              <li>
+                Univers thématique : L'idée était de créer un TCG donc chaque
+                archétype de carte monstres a été conçu pour évoquer un style
+                visuel ambiance spécifique. Chaque carte raconte une
+                mini-histoire à travers son design. Et chaque set de cartes
+                explore une facette différente de cet univers. L'ambiance crée
+                pour chaque archétype de carte met en valeur une mécanique de
+                jeu spécifique, renforçant ainsi l'immersion du joueur dans
+                l'univers du TCG et proposant une expérience différentes pour
+                les différents types deck.
+              </li>
+              <li>
+                Jeux composé en 3 pilliers : chaque pilier a été pensé pour
+                offrir une expérience de jeu complémentaire mais le joueur peut
+                choisir de se spécialiser dans l'un ou l'autre selon ses
+                préférences.
+              </li>
+              <li>Collection et ouverture de boosters</li>
+              <li>
+                Economie interne avec vente et achat des cartes ou divers objets
+              </li>
+              <li>Construction de deck pour faire des combats en ligne.</li>
+            </ul>
+          </div>
+          <div class="pillar tech reveal d1">
+            <div class="pillar-icon">⚙️</div>
+            <h3>L'Ingénierie Technique</h3>
+            <ul class="pillar-list">
+              <li>API REST NestJS · CRUD cartes, sets, boosters</li>
+              <li>
+                Admin Panel React + Vite · filtres, pagination, React Query
+              </li>
+              <li>Auth JWT · gestion des rôles admin / joueur</li>
+              <li>
+                Déployé sur Netlify (front) + Render (back) + Aiven (base de
+                données)
+              </li>
+              <li>Gestion de projet de A à Z : specs → hébergement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROJETS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">04 · Projets</div>
+        <h2 class="section-title">Projets <span>Personnels</span></h2>
+        <div class="divider"></div>
+
+        <div class="timeline">
+          <div class="titem reveal">
+            <div class="pcard">
+              <div class="pimg">
+                <div class="pimg-placeholder">
+                  <div class="picon">🖼</div>
+                  <span>[ Screenshot ]</span>
+                </div>
+                <div class="period-badge">2025</div>
+              </div>
+              <div class="pbody">
+                <h3>Tekken Tracker</h3>
+                <p>
+                  Utilisere une API publique pour suivre les stats de mes
+                  combats en ligne sur Tekken 7. Dashboard React avec graphiques
+                  de performance, historique des matchs et classements. Un
+                  projet pour apprendre à consommer une API tierce et visualiser
+                  des données de manière dynamique.
+                </p>
+              </div>
+              <div class="pfooter">
+                <div class="tags">
+                  <span class="tag hi">React</span
+                  ><span class="tag">Node.js</span>
+                </div>
+                <div class="plinks">
+                  <a
+                    href="https://github.com/sasha4w/tekken8-tracker"
+                    class="plink"
+                    target="_blank"
+                    >GitHub →</a
+                  >
+                  <a
+                    href="https://tekken-tracker.netlify.app/"
+                    class="plink"
+                    target="_blank"
+                    >Live →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="titem reveal">
+            <div class="pcard">
+              <div class="pimg">
+                <div class="pimg-placeholder">
+                  <div class="picon">🖼</div>
+                  <span>[ Screenshot ]</span>
+                </div>
+                <div class="period-badge">2024</div>
+              </div>
+              <div class="pbody">
+                <h3>[Nom du projet perso]</h3>
+                <p>[Description courte.]</p>
+              </div>
+              <div class="pfooter">
+                <div class="tags">
+                  <span class="tag">Vanilla JS</span
+                  ><span class="tag">CSS</span>
+                </div>
+                <div class="plinks">
+                  <a href="#" class="plink" target="_blank">GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETS ÉTUDIANTS -->
+        <div style="margin-top: 5rem">
+          <div class="sub-label">Projets étudiants · MMI</div>
+          <div class="timeline">
+            <div class="titem reveal">
+              <div class="pcard">
+                <div class="pimg">
+                  <div class="pimg-placeholder">
+                    <div class="picon">🖼</div>
+                    <span>[ Screenshot ]</span>
+                  </div>
+                  <div class="period-badge">S5 · 2025</div>
+                </div>
+                <div class="pbody">
+                  <h3>Les Nasdaces de l'espace</h3>
+                  <p>
+                    la consigne doonnée été de réaliser une expérience ludique
+                    et éducative sur le thème du voyage sur Mars. Mon groupe et
+                    moi avons pris la décision de raconter une histoire drôle
+                    avec l'utilisateur qui embarque des aliens qui veulent
+                    rentrer chez eux, ils ne sont pas très doués. C'est alors
+                    une mini jeux vidéo en utilisant Three.js pour faire du
+                    rendu 3D de niveau à se déplacer dedans et réaliser des mini
+                    jeux tout en apprenant de la culture générale. Pour
+                    répartition du travail nous avons séparer l'application en 3
+                    niveaux du jeu complet je me suis occupé de 2e niveau
+                    comprennant la partie dans le vaiseau avec des mini jeux de
+                    quiz et de rapidité pour faire avancer le vaisseau et
+                    revenir sur terre. J'ai utilisé React pour la partie
+                    interface et Three.js pour la partie 3D du niveau.
+                  </p>
+                </div>
+                <div class="pfooter">
+                  <div class="tags">
+                    <span class="tag">React</span
+                    ><span class="tag">Three.js</span>
+                  </div>
+                  <div class="plinks">
+                    <a href="#" class="plink" target="_blank">GitHub →</a>
+                    <a href="#" class="plink" target="_blank">Live →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="titem reveal">
+              <div class="pcard">
+                <div class="pimg">
+                  <div class="pimg-placeholder">
+                    <div class="picon">🖼</div>
+                    <span>[ Screenshot ]</span>
+                  </div>
+                  <div class="period-badge">S4 · 2025</div>
+                </div>
+                <div class="pbody">
+                  <h3>Deckouverte</h3>
+                  <p>
+                    La demande était de créer une application mobile dans qui
+                    repennent le concept de Reigns c'est à dire qu'un roi est
+                    face à des décisions à prendre. Suivant les choix du joueur,
+                    il peut faire prospérer son royaume ou le faire sombrer dans
+                    le chaos. La différence avec Reigns, c'est que les cartes
+                    sont crées par les utilisateurs eux même, c'est une
+                    plateforme de partage de cartes à jouer. Chaque carte
+                    représente une situation, un dilemme ou un événement que les
+                    joueurs peuvent rencontrer dans leur royaume. Les
+                    utilisateurs peuvent créer leurs propres cartes en
+                    définissant les choix possibles et les conséquences
+                    associées à chaque choix. Les joueurs peuvent ensuite
+                    parcourir les decks créées par la communauté, les jouer et
+                    partager leurs expériences.
+                  </p>
+                </div>
+                <div class="pfooter">
+                  <div class="tags">
+                    <span class="tag">React Native</span>
+                  </div>
+                  <div class="plinks">
+                    <a href="#" class="plink" target="_blank">GitHub →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="titem reveal">
+              <div class="pcard">
+                <div class="pimg">
+                  <div class="pimg-placeholder">
+                    <div class="picon">🖼</div>
+                    <span>[ Screenshot ]</span>
+                  </div>
+                  <div class="period-badge">S4 · 2025</div>
+                </div>
+                <div class="pbody">
+                  <h3>Easycrea</h3>
+                  <p>
+                    Site web PWA pour la création et l'administration des cartes
+                    du jeu Deckouverte. Personnellement je me suis chargé de
+                    réalisé l'entièreté du backend avec php nativement consigne
+                    donné par notre professeur en réalisant un mvc complet. Pour
+                    la partie frontend je n'ai que apporté des suggestions.
+                  </p>
+                </div>
+                <div class="pfooter">
+                  <div class="tags">
+                    <span class="tag">React</span><span class="tag">Php</span>
+                  </div>
+                  <div class="plinks">
+                    <a href="#" class="plink" target="_blank">GitHub →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4bis. ART -->
+    <section id="art">
+      <div class="container">
+        <div class="section-label">04bis · Côté Artistique</div>
+        <h2 class="section-title">Créations <span>Visuelles</span></h2>
+        <div class="divider"></div>
+        <div class="art-grid">
+          <div class="aitem feat reveal">
+            <div class="aph">
+              <div class="aicon">🖼</div>
+              <div class="atype">Illustration numérique · Featured</div>
+            </div>
+            <div class="aoverlay">
+              <h4>[Ton illustration principale]</h4>
+              <p>Photoshop / Procreate · 2024</p>
+            </div>
+          </div>
+          <div class="aitem reveal d1">
+            <div class="aph">
+              <div class="aicon">✏️</div>
+              <div class="atype">Concept Art · Cartes TCG</div>
+            </div>
+            <div class="aoverlay">
+              <h4>[Planche concept cartes]</h4>
+              <p>Illustrator + Photoshop · 2024</p>
+            </div>
+          </div>
+          <div class="aitem reveal">
+            <div class="aph">
+              <div class="aicon">🎨</div>
+              <div class="atype">Illustration · [Thème]</div>
+            </div>
+            <div class="aoverlay">
+              <h4>[Nom de l'illustration]</h4>
+              <p>Photoshop · 2024</p>
+            </div>
+          </div>
+          <div class="aitem reveal d1">
+            <div class="aph">
+              <div class="aicon">🖊</div>
+              <div class="atype">UI Design · Figma</div>
+            </div>
+            <div class="aoverlay">
+              <h4>[Maquette UI]</h4>
+              <p>Figma · 2024</p>
+            </div>
+          </div>
+          <div class="aitem reveal d2">
+            <div class="aph">
+              <div class="aicon">✦</div>
+              <div class="atype">Illustration · [Thème]</div>
+            </div>
+            <div class="aoverlay">
+              <h4>[Titre]</h4>
+              <p>Procreate · 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-name">Rochedix Sasha · Creative Developer</div>
+        <div class="footer-links">
+          <a href="https://github.com/sasha4w" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/sasha-rochedix/" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="mailto:sasharochedix@gmail.com">Email</a>
+          <a href="/cv.pdf" target="_blank">CV</a>
+        </div>
+        <p class="footer-note">
+          Construit avec Preact + CSS · Hébergé sur Netlify · 2025
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
