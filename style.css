@@ -107,10 +107,7 @@ nav {
   margin: 0 auto;
   padding: 0 2rem;
 }
-.hero-container {
-  display: flex;
-  gap: 4rem;
-}
+
 section {
   position: relative;
   z-index: 1;
@@ -206,6 +203,10 @@ section {
 }
 
 /* ── 1. HERO ── */
+.hero-container {
+  display: flex;
+  gap: 4rem;
+}
 #hero {
   min-height: 100svh;
   display: flex;

@@ -1,0 +1,37 @@
+/* FOOTER */
+.footerWrapper {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.footerName {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  margin-bottom: 0.8rem;
+}
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.footerLinks a {
+  font-family: var(--font-code);
+  font-size: 0.76rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.footerLinks a:hover {
+  color: var(--gold);
+}
+.footerNote {
+  margin-top: 1.6rem;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0.5;
+}
