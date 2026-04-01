@@ -1,0 +1,204 @@
+/* ── 3. TCG ── */
+#tcg {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(201, 164, 71, 0.06) 0%,
+    transparent 70%
+  );
+}
+.tcgHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.tcgEyebrow {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.tcgMainTitle {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+}
+.tcgMainTitle .where {
+  color: var(--muted);
+}
+.tcgMainTitle .art {
+  color: var(--gold);
+}
+.tcgMainTitle .meets {
+  color: var(--muted);
+  font-weight: 400;
+  font-style: italic;
+}
+.tcgMainTitle .code {
+  color: var(--violet);
+}
+.tcgSubtitle {
+  max-width: 580px;
+  margin: 1.4rem auto 0;
+  font-size: 0.98rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.tcgVideoZone {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  aspect-ratio: 16/9;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(201, 164, 71, 0.08);
+}
+.tcgVideoZone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(155, 127, 244, 0.07) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(201, 164, 71, 0.05) 0%,
+      transparent 60%
+    );
+}
+.playBtn {
+  width: 72px;
+  height: 72px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 0 32px rgba(201, 164, 71, 0.4);
+  position: relative;
+  z-index: 1;
+}
+.playBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 48px rgba(201, 164, 71, 0.6);
+}
+.playBtn svg {
+  fill: var(--bg);
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+}
+.videoLabel {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  position: relative;
+  z-index: 1;
+}
+.tcgLiveBadge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+}
+
+.tcgRepoLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.tcgPillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.pillar {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+.pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+.pillar.art::before {
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+}
+.pillar.tech::before {
+  background: linear-gradient(90deg, var(--violet), var(--gold));
+}
+.pillarIcon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+.pillar h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--cream);
+  margin-bottom: 1.4rem;
+}
+.pillarList {
+  list-style: none;
+}
+.pillarList li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.pillarList li:last-child {
+  border-bottom: none;
+}
+.pillarList li::before {
+  content: "─";
+  color: var(--gold-dim);
+  font-family: var(--font-code);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .tcgPillars {
+    grid-template-columns: 1fr; /* Empile les cartes Art et Tech */
+  }
+
+  .tcgMainTitle {
+    font-size: 2.5rem; /* Réduit un peu le titre géant */
+  }
+
+  .tcgRepoLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

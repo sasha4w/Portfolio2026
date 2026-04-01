@@ -2,7 +2,7 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  position: relative; /* Pour le scroll-hint en absolute */
+  position: relative;
   padding-top: 7rem;
 }
 
@@ -94,22 +94,24 @@
 }
 
 .photoPlaceholder {
-  aspect-ratio: 3/4;
-  background: linear-gradient(
-    160deg,
-    var(--bg2) 0%,
-    var(--bg3) 60%,
-    rgba(201, 164, 71, 0.08) 100%
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  color: var(--muted);
-  font-family: var(--font-code);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg2);
+  display: block;
+}
+
+.photoPlaceholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.heroPhotoCard:hover .photoPlaceholder img {
+  transform: scale(1.08);
 }
 
 .photoPlaceholder .initials {
@@ -181,5 +183,47 @@
   }
   50% {
     transform: translateX(-50%) translateY(6px);
+  }
+}
+@media (max-width: 900px) {
+  .heroSection {
+    padding-top: 5rem;
+    min-height: auto;
+    padding-bottom: 5rem;
+  }
+
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .heroText .label {
+    justify-content: center;
+  }
+
+  .heroText .label::before {
+    display: none;
+  }
+
+  .heroBio {
+    margin: 0 auto 3rem;
+  }
+
+  .heroCta {
+    justify-content: center;
+  }
+
+  .heroPhotoCard {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  .heroCardWrap::before {
+    inset: -15px;
+  }
+
+  .scrollHint {
+    display: none;
   }
 }

@@ -131,7 +131,7 @@ section {
   padding: var(--gap) 0;
 }
 
-.section-label {
+.sectionLabel {
   font-family: var(--font-code);
   font-size: 0.72rem;
   letter-spacing: 0.24em;
@@ -139,7 +139,7 @@ section {
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
-.section-title {
+.sectionTitle {
   font-family: var(--font-head);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
@@ -147,14 +147,14 @@ section {
   line-height: 1.15;
   margin-bottom: 2rem;
 }
-.formation-title {
+.formationTitle {
   font-family: var(--font-head);
   font-size: 1.1rem;
   color: var(--gold);
   letter-spacing: 0.1em;
   margin-bottom: 1.6rem;
 }
-.section-title span {
+.sectionTitle span {
   color: var(--gold);
 }
 .divider {

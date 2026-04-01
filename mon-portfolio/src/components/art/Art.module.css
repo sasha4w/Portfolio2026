@@ -1,0 +1,133 @@
+.artSection {
+  padding: 100px 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.artAccordion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh; /* Hauteur fixe pour l'accordéon */
+  margin: 4rem 0;
+  transform: skew(-5deg); /* Inversion du skew pour le style */
+  gap: 0.5rem;
+}
+
+.card {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.5);
+  transition: all 0.7s ease-in-out;
+  /* On redresse l'image pour compenser le skew du parent */
+  transform: skew(5deg) scale(1.2);
+}
+
+.cardHead {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1.5rem;
+  /* Dégradé pour la lisibilité du texte au repos */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  z-index: 2;
+  /* On incline le texte pour matcher le design */
+  transform: skew(5deg);
+}
+
+.cardTag {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  /* On s'assure que même sur une carte étroite, le texte ne déborde pas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardTitle {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  color: var(--cream);
+  margin-top: 0.3rem;
+  /* CACHÉ AU REPOS : On ne laisse que le Tag visible */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+/* --- HOVER STATE --- */
+
+.card:hover {
+  flex-grow: 8; /* L'expansion massive */
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 30px rgba(201, 164, 71, 0.15);
+}
+
+.card:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: skew(5deg) scale(1);
+}
+
+.card:hover .cardHead {
+  padding: 3rem 2rem 2rem 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent 100%);
+}
+
+.card:hover .cardTitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .cardTag {
+  letter-spacing: 3px;
+  transition: letter-spacing 0.4s ease;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .artAccordion {
+    flex-direction: column;
+    height: auto;
+    transform: none;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    height: 180px;
+    flex: none;
+    transform: none;
+  }
+
+  .card:hover {
+    height: 350px;
+    flex: none;
+  }
+
+  .card img,
+  .card:hover img,
+  .cardHead {
+    transform: none;
+  }
+}

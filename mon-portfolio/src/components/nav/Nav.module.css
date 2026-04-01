@@ -23,6 +23,7 @@
 .navLinks {
   display: flex;
   gap: 2.4rem;
+  text-align: center;
 }
 
 .navLinks a {
@@ -37,4 +38,13 @@
 .navLinks a:hover,
 .active {
   color: var(--gold) !important;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .navWrapper {
+    padding: 1rem 1.5rem;
+  }
+  .navLinks {
+    gap: 1.2rem;
+  }
 }

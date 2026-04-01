@@ -42,6 +42,7 @@
   font-size: 0.72rem;
   color: var(--cream);
   opacity: 0.75;
+  white-space: nowrap;
 }
 .tag.hi {
   background: var(--gold-glow);
@@ -79,4 +80,33 @@
 .diplomeInfo p {
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 900px) {
+  .skillsGrid {
+    grid-template-columns: 1fr 1fr; /* 2 colonnes comme tu as mis */
+  }
+}
+
+@media (max-width: 600px) {
+  .skillsGrid {
+    grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+  }
+
+  .diplomeItem {
+    flex-direction: column; /* On empile l'année au-dessus du titre */
+    gap: 0.5rem;
+    padding: 1.2rem 0;
+  }
+
+  .diplomeYear {
+    min-width: auto;
+    font-size: 0.7rem;
+    background: var(--gold-glow);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 }

@@ -1,5 +1,5 @@
 import styles from "./Hero.module.css";
-
+import maPhoto from "../../assets/heroPicture.jpg";
 export function Hero() {
   return (
     <section id="hero" class={styles.heroSection}>
@@ -20,7 +20,6 @@ export function Hero() {
           </p>
 
           <div class={styles.heroCta}>
-            {/* Ici on garde btn et btn-primary en global si ils sont dans index.css */}
             <a href="#tcg" class="btn btn-primary">
               Voir mon projet principal: TCG ↓
             </a>
@@ -40,8 +39,7 @@ export function Hero() {
         <div class={styles.heroCardWrap}>
           <div class={styles.heroPhotoCard}>
             <div class={styles.photoPlaceholder}>
-              <div class={styles.initials}>RS</div>
-              <span>[ Ta photo ici ]</span>
+              <img src={maPhoto} alt="Ma photo" />
             </div>
             <div class={styles.cardFooter}>
               <div>

@@ -1,0 +1,178 @@
+.subLabel {
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.subLabel::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2.4rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--gold-dim) 10%,
+    var(--gold-dim) 90%,
+    transparent
+  );
+}
+.titem {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.titem::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: 1.6rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+  transform: translateX(-3.5px);
+}
+
+.projectCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.projectCard:hover {
+  border-color: rgba(201, 164, 71, 0.4);
+  box-shadow: 0 4px 32px rgba(201, 164, 71, 0.06);
+}
+
+.projectImg {
+  aspect-ratio: 16/8;
+  background: linear-gradient(135deg, var(--bg3), var(--bg2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.projectImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.projectImgPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+.projectImgPlaceholder .projectIcon {
+  font-size: 2rem;
+  opacity: 0.25;
+}
+.periodBadge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background: rgba(9, 11, 20, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.25rem 0.7rem;
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.projectBody {
+  padding: 1.6rem 2rem;
+}
+.projectBody h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+.projectBody p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.projectFooter {
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.projectLinks {
+  display: flex;
+  gap: 0.6rem;
+}
+.projectLink {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.projectLink:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+}
+/* a refacto*/
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  color: var(--cream);
+  opacity: 0.75;
+}
+.tag.hi {
+  background: var(--gold-glow);
+  border-color: rgba(201, 164, 71, 0.3);
+  color: var(--gold);
+  opacity: 1;
+}
