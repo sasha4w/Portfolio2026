@@ -1,5 +1,5 @@
 import styles from "./Hero.module.css";
-import maPhoto from "../../assets/heroPicture.jpg";
+import maPhoto from "../../assets/heroPicture.png";
 export function Hero() {
   return (
     <section id="hero" class={styles.heroSection}>
