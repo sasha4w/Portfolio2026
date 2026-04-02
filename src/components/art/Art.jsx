@@ -1,13 +1,13 @@
 import { Reveal } from "../../utils/Reveal";
 import styles from "./Art.module.css";
-
+import maquetteImg from "../../assets/maquette.png";
 const ARTWORKS = [
   { id: 1, type: "ILLUSTRATION", title: "Project Alpha", img: "votre_img.jpg" },
   {
     id: 2,
     type: "MAQUETTE UI",
-    title: "Dashboard Mobile",
-    img: "votre_img.jpg",
+    title: "Menu site web pwa de minis jeux",
+    img: maquetteImg,
   },
   { id: 3, type: "LOGO", title: "Brand Identity", img: "votre_img.jpg" },
   { id: 4, type: "CONCEPT ART", title: "Environment", img: "votre_img.jpg" },
