@@ -22,6 +22,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card img {
@@ -102,6 +103,108 @@
 .card:hover .cardTag {
   letter-spacing: 3px;
   transition: letter-spacing 0.4s ease;
+}
+/* --- MODAL --- */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(9, 11, 20, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg2);
+  animation: scaleIn 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.93);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modalContent img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 0;
+  filter: none;
+  transform: none;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: rgba(9, 11, 20, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.modalClose:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.modalInfo {
+  padding: 1.2rem 1.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.modalTag {
+  font-family: var(--font-code);
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.modalTitle {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--cream);
 }
 
 /* --- RESPONSIVE --- */

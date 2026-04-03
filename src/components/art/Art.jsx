@@ -1,20 +1,36 @@
+import { useState } from "preact/hooks";
 import { Reveal } from "../../utils/Reveal";
 import styles from "./Art.module.css";
 import maquetteImg from "../../assets/maquette.png";
+import logoImg from "../../assets/logo.png";
+import PhotomontageImg from "../../assets/photomontage.webp";
+import serigraphieImg from "../../assets/serigraphie.webp";
+import conceptImg from "../../assets/concept.jpg";
+
 const ARTWORKS = [
-  { id: 1, type: "ILLUSTRATION", title: "Project Alpha", img: "votre_img.jpg" },
+  { id: 1, type: "PHOTOGRAPHIE", title: "Experiment", img: conceptImg },
   {
     id: 2,
     type: "MAQUETTE UI",
     title: "Menu site web pwa de minis jeux",
     img: maquetteImg,
   },
-  { id: 3, type: "LOGO", title: "Brand Identity", img: "votre_img.jpg" },
-  { id: 4, type: "CONCEPT ART", title: "Environment", img: "votre_img.jpg" },
-  { id: 5, type: "PHOTOMONTAGE", title: "Surreal Scene", img: "votre_img.jpg" },
+  { id: 3, type: "LOGO", title: "Brand Identity", img: logoImg },
+  {
+    id: 4,
+    type: "SERIGRAPHIE",
+    title: "Impression of my mood",
+    img: serigraphieImg,
+  },
+  { id: 5, type: "PHOTOMONTAGE", title: "One Light", img: PhotomontageImg },
 ];
 
 export function Art() {
+  const [selected, setSelected] = useState(null);
+
+  const openModal = (work) => setSelected(work);
+  const closeModal = () => setSelected(null);
+
   return (
     <section id="art" className={styles.artSection}>
       <div className="container">
@@ -27,16 +43,16 @@ export function Art() {
         <Reveal width="100%">
           <div className={styles.artAccordion}>
             {ARTWORKS.map((work) => (
-              <div key={work.id} className={styles.card}>
+              <div
+                key={work.id}
+                className={styles.card}
+                onClick={() => openModal(work)}
+              >
                 <img src={work.img} alt={work.title} />
-
-                {/* On utilise cardHead comme conteneur pour gérer l'écriture verticale */}
                 <div className={styles.cardHead}>
                   <span className={styles.cardTag}>{work.type}</span>
                   <h4 className={styles.cardTitle}>{work.title}</h4>
                 </div>
-
-                {/* Petit bonus si tu veux garder le "Voir le projet" au hover uniquement */}
                 <div className={styles.cardHoverInfo}>
                   <span>Voir le projet →</span>
                 </div>
@@ -45,6 +61,25 @@ export function Art() {
           </div>
         </Reveal>
       </div>
+
+      {/* MODAL */}
+      {selected && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className={styles.modalClose} onClick={closeModal}>
+              ✕
+            </button>
+            <img src={selected.img} alt={selected.title} />
+            <div className={styles.modalInfo}>
+              <span className={styles.modalTag}>{selected.type}</span>
+              <h3 className={styles.modalTitle}>{selected.title}</h3>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -77,6 +77,47 @@ const SKILLS_DATA = [
   {
     icon: (
       <svg
+        fill="#ffffff"
+        viewBox="0 0 24 24"
+        id="wordpress"
+        data-name="Flat Line"
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon flat-line"
+        stroke="#ffffff"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            id="primary"
+            d="M16.33,9A4.33,4.33,0,0,0,17,5.44c-.2-1.52.83-1.65,2-1.24A3.1,3.1,0,0,1,21,7.12h0a3.15,3.15,0,0,1-.28,1.29L15.44,20,11,6h2"
+            style="fill: none; stroke: #ffffff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+          ></path>
+          <polyline
+            id="primary-2"
+            data-name="primary"
+            points="5 5.95 3 5.95 7.44 20 12 9.96"
+            style="fill: none; stroke: #ffffff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"
+          ></polyline>
+        </g>
+      </svg>
+    ),
+    title: "CMS",
+    tags: [
+      { name: "WordPress", highlight: true },
+      { name: "PrestaShop", highlight: true },
+      { name: "Drupal" },
+      { name: "Thème custom" },
+      { name: "WooCommerce" },
+    ],
+  },
+  {
+    icon: (
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 325.04 325.04"
         width="24"
@@ -94,6 +135,8 @@ const SKILLS_DATA = [
       { name: "Photoshop" },
       { name: "Illustrator" },
       { name: "UX/UI" },
+      { name: "Davinci Resolve" },
+      { name: "Canva" },
     ],
   },
   {
@@ -114,8 +157,8 @@ const SKILLS_DATA = [
     tags: [
       { name: "Git / GitHub" },
       { name: "Netlify" },
-      { name: "React Query" },
-      { name: "Linux" },
+      { name: "Render" },
+      { name: "Trello" },
     ],
   },
   {
