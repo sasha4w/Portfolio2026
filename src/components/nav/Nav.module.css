@@ -39,6 +39,39 @@
 .active {
   color: var(--gold) !important;
 }
+.langSwitcher {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.2rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.langBtn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.langBtn:hover {
+  color: var(--gold);
+}
+
+.langActive {
+  background: var(--gold-glow);
+  color: var(--gold);
+  border: 1px solid rgba(201, 164, 71, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .navWrapper {
@@ -46,5 +79,8 @@
   }
   .navLinks {
     gap: 1.2rem;
+  }
+  .langSwitcher {
+    display: none;
   }
 }

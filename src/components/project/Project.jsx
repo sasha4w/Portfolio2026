@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from "preact/hooks";
+import { useI18n } from "../../i18n/usei18n";
 import styles from "./Project.module.css";
 
-// --- DONNÉES ---
+// --- DONNÉES (non traduisibles ici) ---
 
 const PROJECTS = [
   {
+    key: "koreanHelper",
     type: "personal",
     year: "2025",
-    sub: "Personal Project",
-    title: "KoreanHelper",
-    description: "Site web de ressources pour apprendre le coréen.",
+    subKey: "personal",
     tags: [
       { name: "React", hi: true },
       { name: "CSS Custom" },
@@ -22,12 +22,10 @@ const PROJECTS = [
     accentBg: "rgba(201,164,71,0.08)",
   },
   {
+    key: "tekkenTracker",
     type: "personal",
     year: "2024",
-    sub: "Personal Project",
-    title: "Tekken Tracker",
-    description:
-      "Application web pour suivre les statistiques de jeu dans Tekken 8. Intégration d'une API tierce, visualisation des données avec graphiques interactifs.",
+    subKey: "personal",
     tags: [
       { name: "React", hi: true },
       { name: "SASS", hi: true },
@@ -40,13 +38,15 @@ const PROJECTS = [
     accentBg: "rgba(155,127,244,0.08)",
   },
   {
+    key: "isci43",
     type: "intern",
     year: "2025",
-    sub: "Internship",
-    title: "ISCI43 - Site Drupal",
-    description:
-      "création d'un site pour l'isci43, centre formation en alternance. Intégration d'un thème Drupal, personnalisation CSS, ajout de modules pour fonctionnalités spécifiques.",
-    tags: [{ name: "Drupal", hi: true }, { name: "HTML/CSS" }],
+    subKey: "intern",
+    tags: [
+      { name: "Drupal", hi: true },
+      { name: "HTML/CSS" },
+      { name: "Google workspace" },
+    ],
     demo: "https://www.isci43.fr/",
     github: null,
     image: "images/isciImg2.png",
@@ -54,16 +54,15 @@ const PROJECTS = [
     accentBg: "rgba(201,164,71,0.08)",
   },
   {
+    key: "yogaClub",
     type: "intern",
     year: "2024",
-    sub: "Internship",
-    title: "Site wordpress du yoga club lucéen",
-    description:
-      "Refonte du site vitrine pour un club de yoga local. Installation, personnalisation d'un thème WordPress avec Elementor, optimisation SEO.",
+    subKey: "intern",
     tags: [
       { name: "WordPress", hi: true },
       { name: "Elementor", hi: true },
       { name: "CSS Custom" },
+      { name: "Trello" },
     ],
     demo: "https://www.yogaclub-sainte-luce-sur-loire.com/",
     github: null,
@@ -72,12 +71,10 @@ const PROJECTS = [
     accentBg: "rgba(78,205,196,0.08)",
   },
   {
+    key: "nasdace",
     type: "student",
     year: "2025",
-    sub: "Student · BUT MMI",
-    title: "Back 2 Nasdaces City",
-    description:
-      "Expérience interactive et éducative en trinôme inspirée des Zinzins de l'Espace. Concept : Voyage vers Mars découpé en trois phases interactives. Réalisation : Développement de la partie centrale (vie à bord). Création de l'environnement 3D, des dialogues et de mini-jeux d'arcade pour rythmer la progression narrative.",
+    subKey: "student",
     tags: [
       { name: "Three.js", hi: true },
       { name: "React", hi: true },
@@ -89,12 +86,10 @@ const PROJECTS = [
     accentBg: "rgba(155,127,244,0.08)",
   },
   {
+    key: "easyCrea",
     type: "student",
     year: "2022",
-    sub: "Student · BUT MMI",
-    title: "EasyCea & Deckouverte",
-    description:
-      "Réalisation en trinôme d'un jeu mobile inspiré de Reigns avec contenu communautaire. L'écosystème comprend une app React Native, une PWA React (création/modération) et une API PHP natif (MVC). Mon rôle : Développement complet du Backend (logique métier, API, BDD) et soutien sur le front React. Coordination de l'équipe via Trello pour assurer la synchronisation des données entre les trois plateformes.",
+    subKey: "student",
     tags: [
       { name: "Php", hi: true },
       { name: "React", hi: true },
@@ -113,7 +108,6 @@ const PROJECTS = [
 const FILTERS = [
   {
     key: "personal",
-    tooltip: "Personal",
     icon: (
       <svg
         width="18"
@@ -131,7 +125,6 @@ const FILTERS = [
   },
   {
     key: "intern",
-    tooltip: "Internship",
     icon: (
       <svg
         width="18"
@@ -150,7 +143,6 @@ const FILTERS = [
   },
   {
     key: "student",
-    tooltip: "Student",
     icon: (
       <svg
         width="18"
@@ -170,7 +162,6 @@ const FILTERS = [
 ];
 
 // --- SLIDE STATES ---
-// "active" | "preStart" | "animateEnd" | "idle"
 
 function useSlider(list) {
   const [current, setCurrent] = useState(0);
@@ -183,15 +174,8 @@ function useSlider(list) {
     if (transitioning.current || states[next] === "active") return;
     transitioning.current = true;
 
-    // preStart: prépare le prochain slide (opacity 0, prêt)
-    setStates((prev) =>
-      prev.map((s, i) => {
-        if (i === next) return "preStart";
-        return s;
-      }),
-    );
+    setStates((prev) => prev.map((s, i) => (i === next ? "preStart" : s)));
 
-    // Petit délai puis lance l'animation
     setTimeout(() => {
       setStates((prev) =>
         prev.map((s, i) => {
@@ -203,14 +187,8 @@ function useSlider(list) {
       setCurrent(next);
     }, 50);
 
-    // Fin de transition : reset l'ancien slide
     setTimeout(() => {
-      setStates((prev) =>
-        prev.map((s, i) => {
-          if (i !== next) return "idle";
-          return "active";
-        }),
-      );
+      setStates((prev) => prev.map((s, i) => (i !== next ? "idle" : "active")));
       transitioning.current = false;
     }, 900);
   }
@@ -222,18 +200,13 @@ function useSlider(list) {
 
 export function Project() {
   const [activeFilter, setActiveFilter] = useState("personal");
+  const { t } = useI18n();
 
   const filtered = PROJECTS.filter((p) => p.type === activeFilter).sort(
     (a, b) => b.year - a.year,
   );
-
   const { current, states, goTo } = useSlider(filtered);
 
-  function switchFilter(key) {
-    setActiveFilter(key);
-  }
-
-  // Reset slider quand le filtre change
   const prevFilter = useRef(activeFilter);
   useEffect(() => {
     prevFilter.current = activeFilter;
@@ -242,21 +215,26 @@ export function Project() {
   return (
     <section id="projects">
       <div class="container">
-        <div class="sectionLabel">03 · Projets</div>
+        <div class="sectionLabel">{t.project.sectionLabel}</div>
         <h2 class="sectionTitle">
-          Réalisations &amp; <span>Projets</span>
+          {t.project.sectionTitle} <span>{t.project.sectionTitleSpan}</span>
         </h2>
         <div class="divider" />
 
-        {/* FILTRES */}
         <div class={styles.filters}>
           {FILTERS.map((f) => (
             <div key={f.key} class={styles.filterItem}>
-              <span class={styles.filterTooltip}>{f.tooltip}</span>
+              <span class={styles.filterTooltip}>
+                {t.project.filters[f.key]}
+              </span>
               <button
-                class={`${styles.filterBtn} ${activeFilter === f.key ? styles.active : ""}`}
-                onClick={() => switchFilter(f.key)}
-                aria-label={f.tooltip}
+                class={
+                  activeFilter === f.key
+                    ? styles.filterBtn + " " + styles.active
+                    : styles.filterBtn
+                }
+                onClick={() => setActiveFilter(f.key)}
+                aria-label={t.project.filters[f.key]}
               >
                 <span class={styles.filterBtnCount}>
                   {PROJECTS.filter((p) => p.type === f.key).length}
@@ -268,7 +246,6 @@ export function Project() {
         </div>
       </div>
 
-      {/* SLIDER WRAPPER — full width */}
       <div class={styles.sliderWrapper}>
         {filtered.map((project, i) => {
           const state = states[i];
@@ -281,6 +258,8 @@ export function Project() {
             .filter(Boolean)
             .join(" ");
 
+          const tProject = t.project.projects[project.key];
+
           return (
             <div
               key={`${activeFilter}-${i}`}
@@ -290,20 +269,23 @@ export function Project() {
                 "--accent-bg": project.accentBg,
               }}
             >
-              {/* LEFT */}
               <div class={styles.slideLeft}>
                 <div class={styles.slideContent}>
-                  <p class={styles.slideSub}>{project.sub}</p>
+                  <p class={styles.slideSub}>
+                    {t.project.filters[project.subKey]}
+                  </p>
                   <div class={styles.slideYearBadge}>{project.year}</div>
-                  <h2 class={styles.slideTitle}>{project.title}</h2>
-                  <p class={styles.slideDesc}>{project.description}</p>
+                  <h2 class={styles.slideTitle}>{tProject.title}</h2>
+                  <p class={styles.slideDesc}>{tProject.description}</p>
                   <div class={styles.slideTags}>
-                    {project.tags.map((t) => (
+                    {project.tags.map((tag) => (
                       <span
-                        key={t.name}
-                        class={`${styles.tag} ${t.hi ? styles.hi : ""}`}
+                        key={tag.name}
+                        class={
+                          tag.hi ? styles.tag + " " + styles.hi : styles.tag
+                        }
                       >
-                        {t.name}
+                        {tag.name}
                       </span>
                     ))}
                   </div>
@@ -330,23 +312,23 @@ export function Project() {
                     )}
                   </div>
                 </div>
-
-                {/* Watermark */}
-                <div class={styles.watermark}>{project.title}</div>
+                <div class={styles.watermark}>{tProject.title}</div>
               </div>
 
-              {/* RIGHT — image */}
               <div class={styles.slideRight}>
                 {project.image ? (
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={tProject.title}
                     class={styles.slideImg}
+                    draggable="false"
                   />
                 ) : (
                   <div class={styles.slidePlaceholder}>
                     <span class={styles.placeholderYear}>{project.year}</span>
-                    <span class={styles.placeholderTitle}>{project.title}</span>
+                    <span class={styles.placeholderTitle}>
+                      {tProject.title}
+                    </span>
                   </div>
                 )}
               </div>
@@ -354,14 +336,17 @@ export function Project() {
           );
         })}
 
-        {/* NAVIGATION LATÉRALE */}
         <nav class={styles.sideNav}>
           {filtered.map((_, i) => (
             <button
               key={i}
-              class={`${styles.navDot} ${i === current ? styles.navDotActive : ""}`}
+              class={
+                i === current
+                  ? styles.navDot + " " + styles.navDotActive
+                  : styles.navDot
+              }
               onClick={() => goTo(i)}
-              aria-label={`Projet ${i + 1}`}
+              aria-label={`${t.project.projectLabel} ${i + 1}`}
             />
           ))}
         </nav>

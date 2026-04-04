@@ -45,6 +45,8 @@ img {
   display: block;
   max-width: 100%;
   border-radius: var(--radius);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 ::-webkit-scrollbar {
   width: 4px;
@@ -61,7 +63,7 @@ img {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 /* BUTTONS */
 .btn {

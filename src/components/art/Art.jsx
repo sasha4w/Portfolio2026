@@ -48,7 +48,7 @@ export function Art() {
                 className={styles.card}
                 onClick={() => openModal(work)}
               >
-                <img src={work.img} alt={work.title} />
+                <img src={work.img} alt={work.title} draggable="false" />
                 <div className={styles.cardHead}>
                   <span className={styles.cardTag}>{work.type}</span>
                   <h4 className={styles.cardTitle}>{work.title}</h4>
@@ -72,7 +72,7 @@ export function Art() {
             <button className={styles.modalClose} onClick={closeModal}>
               ✕
             </button>
-            <img src={selected.img} alt={selected.title} />
+            <img src={selected.img} alt={selected.title} draggable="false" />
             <div className={styles.modalInfo}>
               <span className={styles.modalTag}>{selected.type}</span>
               <h3 className={styles.modalTitle}>{selected.title}</h3>
