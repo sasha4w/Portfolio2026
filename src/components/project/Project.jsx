@@ -13,9 +13,9 @@ const PROJECTS = [
     tags: [
       { name: "React", hi: true },
       { name: "CSS Custom" },
-      { name: "Vite" },
+      { name: "Supabase" },
     ],
-    demo: null,
+    demo: "https://korean-helper.netlify.app",
     github: "https://github.com/sasha4w/koreanhelper",
     image: null,
     accent: "#c9a447",
