@@ -8,7 +8,7 @@ export const en = {
   },
   hero: {
     label: "Creative Developer",
-    title: "Fullstack Web Developer & Designer · Looking for an apprenticeship",
+    title: "Fullstack Web Developer & Designer",
     bio: "I love building gamified web experiences. Passionate about interactive storytelling and game design.",
     ctaMain: "See my main project: TCG ↓",
     ctaCv: "Resume PDF",
@@ -30,6 +30,7 @@ export const en = {
       softSkills: "Soft Skills",
     },
     formation: [
+      { title: "Master's in Fullstack Development", description: "" },
       { title: "Korean Language Level 2", description: "" },
       { title: "BUT MMI", description: "· Web Development & Digital Creation" },
       {

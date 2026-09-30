@@ -43,7 +43,6 @@ export function Hero() {
                 <div class={styles.fullName}>Rochedix Sasha</div>
                 <div class={styles.role}>fullstack · creative dev</div>
               </div>
-              <div class={styles.badge}>{t.hero.badge}</div>
             </div>
           </div>
         </div>

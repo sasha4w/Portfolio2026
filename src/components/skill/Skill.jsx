@@ -204,10 +204,13 @@ export function Skill() {
   // Formation traduite
   const formationData = t.skill.formation.map((item, i) => ({
     ...item,
-    year: ["2025-2026", "2022–25", "2022"][i],
-    school: ["Dongguk University", "IUT d'Angoulême", "Lycée Leonard de Vinci"][
-      i
-    ],
+    year: ["2026–28", "2025-2026", "2022–25", "2022"][i],
+    school: [
+      "Ynov Campus Lyon",
+      "Dongguk University",
+      "IUT d'Angoulême",
+      "Lycée Leonard de Vinci",
+    ][i],
   }));
 
   // Résolution des tags : string = clé dans translatedTags, sinon tableau direct

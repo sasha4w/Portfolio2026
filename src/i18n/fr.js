@@ -8,7 +8,7 @@ export const fr = {
   },
   hero: {
     label: "Creative Developer",
-    title: "Fullstack Web Developer & Designer · En recherche d'alternance",
+    title: "Fullstack Web Developer & Designer",
     bio: "J'aime construire des expériences web gamifiées. Passionné par la narration interactive, le game design.",
     ctaMain: "Voir mon projet principal : TCG ↓",
     ctaCv: "CV PDF",
@@ -30,6 +30,7 @@ export const fr = {
       softSkills: "Soft Skills",
     },
     formation: [
+      { title: "Mastère Développement Fullstack", description: "" },
       { title: "Korean Language Level 2", description: "" },
       {
         title: "BUT MMI",

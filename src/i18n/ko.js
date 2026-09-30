@@ -8,7 +8,7 @@ export const ko = {
   },
   hero: {
     label: "크리에이티브 개발자",
-    title: "풀스택 웹 개발자 & 디자이너 · 인턴십 구직 중",
+    title: "풀스택 웹 개발자 & 디자이너",
     bio: "게임화된 웹 경험을 만드는 것을 좋아합니다. 인터랙티브 스토리텔링과 게임 디자인에 열정적입니다.",
     ctaMain: "메인 프로젝트 보기: TCG ↓",
     ctaCv: "이력서 PDF",
@@ -30,6 +30,7 @@ export const ko = {
       softSkills: "소프트 스킬",
     },
     formation: [
+      { title: "풀스택 개발 석사 과정", description: "" },
       { title: "한국어 2급", description: "" },
       { title: "BUT MMI", description: "· 웹 개발 & 디지털 창작" },
       {
